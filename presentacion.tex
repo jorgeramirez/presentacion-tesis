@@ -1,0 +1,211 @@
+\documentclass[compress]{beamer}
+%\documentclass[ignorenonframetext,handout]{beamer}
+%\setbeamercovered{transparent}
+%\usepackage[ISO 8859-1]{inputenc}
+\usepackage{default}
+
+% para usar figuras devemos acrescentar
+\usepackage{graphicx}
+%\usepackage{graphics}
+%\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+%\DeclareGraphicsExtensions{.jpg, .eps}
+%\DeclareGraphicsRule{.jpg}{eps}{.jpg}{`jpeg2ps -h -r 600 #1}
+\usepackage{tikz}
+%\usetikzlibrary{arrows,backgrounds,coordinatesystems,3d,shapes,plotmarks,automata,calendar,er,
+%folding,matrix,mindmap,patterns,petri,plothandlers,topaths,trees} 
+\usetikzlibrary{positioning}
+%\usepgflibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary[patterns]
+%\tikzstyle{every text node part}
+%\usetikzlibrary{arrows,backgrounds,positioning,fit} 
+\usetikzlibrary{calc}
+% para gerar graficos no latex
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+% \usepackage{algpseudocode}
+% \usepackage{algorithmicx}
+\usepackage[Algoritmo]{algorithm}
+\usepackage[noend]{algorithmic}
+
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+%\usepackage{shadethm}
+
+%\definecolor{shadethmcolor}{rgb}{.75,.75,.75}
+
+%\newshadetheorem{theorem}{\scshape Teorema}[chapter]
+%\newtheorem{teorema}[theorem]{\scshape Teorema}
+%\newtheorem{proposicao}[theorem]{\scshape Proposição}
+%\newtheorem{corolario}[theorem]{\scshape Corolário}
+%\newtheorem{lema}[theorem]{\scshape Lema}
+%\newtheorem{definicao}[theorem]{\scshape Definição}
+%\newtheorem{conjectura}[theorem]{\scshape Conjectura}
+%\newtheorem{escolio}[theorem]{\scshape Escólio}
+%\newtheorem{exemplo}[theorem]{\scshape Exemplo}
+%\newtheorem{exemplos}[theorem]{\scshape Exemplos}
+%\newtheorem{propriedade}[theorem]{\scshape Propriedade}
+
+\renewcommand{\u}{{\bf u}}
+\renewcommand{\v}{{\bf v}}
+\renewcommand{\sin}{\operatorname{sen}}
+\renewcommand{\tan}{\operatorname{tg}}
+\providecommand{\cas}{\operatorname{cas}}
+\providecommand{\mdc}{\mathrm{mdc}}
+\providecommand{\f}{{\bf f}}
+
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\eg}{\textit{e.g.}}
+%\newcommand{\qed}{\hfill $\square$}
+
+\renewcommand\Re{\operatorname{Re}}
+\renewcommand\Im{\operatorname{Im}}
+
+\providecommand{\x}{{\bf x}}
+\providecommand{\y}{{\bf y}}
+\providecommand{\w}{{\bf w}}
+\providecommand{\f}{{\bf f}}
+\providecommand{\q}{{\bf q}}
+\providecommand{\bfa}{{\bf a}}
+\providecommand{\bfb}{{\bf b}}
+\providecommand{\bfc}{{\bf c}}
+\providecommand{\bfd}{{\bf d}}
+\providecommand{\bfe}{{\bf e}}
+\providecommand{\bfs}{{\bf s}}
+\providecommand{\bfz}{{\bf z}}
+\providecommand{\zero}{{\bf 0}}
+\providecommand{\spn}{\mathrm{span}}
+\providecommand{\posto}{\mathrm{posto}}
+\providecommand{\nul}{\mathrm{nul}}
+\providecommand{\proj}{\mathrm{proj}}
+\providecommand{\tr}{\mathrm{tr}}
+\providecommand{\sgn}{\mathrm{sgn}}
+
+\providecommand{\cov}{\mathrm{cov}}
+
+\providecommand{\dilation}{\mathcal{D}}
+\providecommand{\erosion}{\mathcal{E}}
+\providecommand{\open}{\mathcal{O}}
+\providecommand{\close}{\mathcal{C}}
+
+\newcommand*{\Bhat}{\skew{3}{\hat}{B}}
+
+\mode<presentation>
+{
+  \setbeamertemplate{background canvas}[vertical shading][bottom=white!10,top=blue!10]
+%  \usetheme{Berkeley}
+%  \usetheme{CambridgeUS}
+%  \usetheme{Madrid}
+  \usetheme{Warsaw}
+  \usefonttheme[onlysmall]{structurebold}
+  
+  \setbeamertemplate{headline}{}
+  
+%   \setbeamercovered{invisible} % default
+  \setbeamercovered{ transparent, again covered={\opaqueness{25}} } % =15%
+%   \setbeamercovered{transparent=50}
+%   \setbeamercovered{dynamic}
+
+%   \setbeamercovered{again covered={\opaqueness<1->{25}}}
+}
+
+% copiado do site:
+% http://latex-beamer-class.10966.n7.nabble.com/Covering-images-transparent-i-e-dimmed-figures-td1504
+% . html
+\usepackage{ifthen}
+
+\makeatletter
+\newcommand{\includecoveredgraphics}[2][]{
+    \ifthenelse{\the\beamer@coveringdepth=1}{
+        \tikz
+            \node[inner sep=0pt,outer sep=0pt,opacity=0.15]
+                {\includegraphics[#1]{#2}};
+    }{
+        \tikz
+            \node[inner sep=0pt,outer sep=0pt]
+                {\includegraphics[#1]{#2}};%
+    }
+} 
+\makeatother
+
+%\pgfdeclareimage[height=1.4cm]{logo_XIVsm}{semanauniversitaria}
+
+%% put XIVsm logo in bottom left
+%\setbeamertemplate{sidebar left}{
+%%   \vfill%
+ %  \rlap{\hskip0.0cm
+  %       %\href{http://www.uece.br/semanauniversitaria}
+   %      {\pgfuseimage{logo_XIVsm}}}
+   %%\vskip2pt%
+   %%\llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+   %%\vskip2pt%
+%}
+
+% para que entre bien el título en el footer
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\title{Dise\~no de Interfaces de Usuario basado en Reconocimiento del Habla}
+\author{Rodrigo Parra y Jorge Ram\'{i}rez}
+
+\date{San Lorenzo, 2014}
+
+
+\begin{document}
+
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\input{introduccion}
+\input{antecedentes}
+\input{actualidad}
+\input{proceso}
+\input{tecnologias}
+\input{problema}
+\input{solucion}
+\input{evaluacion}
+\input{resultados}
+\input{conclusiones}
+\input{trabajos}
+
+%%% BIBLIOGRAFIA %%%
+\begin{frame}[allowframebreaks]
+\frametitle{Referencias}
+\bibliographystyle{plain}
+\bibliography{referencias.bib}
+\end{frame}
+
+
+
+\end{document}
