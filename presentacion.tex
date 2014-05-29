@@ -27,9 +27,8 @@
 
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsmath}
 \usepackage{MnSymbol}
-
+\usepackage{amsmath,amsthm}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 
@@ -37,10 +36,13 @@
 % \usepackage{algorithmicx}
 \usepackage[Algoritmo]{algorithm}
 \usepackage[noend]{algorithmic}
-
+\usepackage{float}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
 %%%%
 \usepackage{ragged2e}
+\usepackage{listings}
 
+\newcommand{\foreign}[1]{{\it #1}}
 
 \setbeamertemplate{bibliography entry title}{}
 \setbeamertemplate{bibliography entry location}{}
@@ -161,6 +163,8 @@
    %%\vskip2pt%
 %}
 
+\DeclareMathOperator*{\argmax}{arg\,max}
+
 % para que entre bien el título en el footer
 \setbeamertemplate{footline}
 {
@@ -184,6 +188,7 @@
 \date{San Lorenzo, 2014}
 
 
+\addbibresource{referencias.bib}
 \begin{document}
 
 
@@ -207,10 +212,7 @@
 %%% BIBLIOGRAFIA %%%
 \begin{frame}[allowframebreaks]
 \frametitle{Referencias}
-\bibliographystyle{plain}
-\bibliography{referencias.bib}
+\printbibliography
 \end{frame}
-
-
 
 \end{document}

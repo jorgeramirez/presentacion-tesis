@@ -1,4 +1,313 @@
 \section{Conclusiones}
 
 \begin{frame}{Conclusiones}
+\framesubtitle{Dise\~no de la Interfaz}
+\begin{itemize}
+\item{\textbf{Interactuar con la aplicaci\'on, no con la interfaz gr\'afica\\}}
+En base a la experiencia, resulta recomendable asociar un comando a una funcionalidad
+y no a una \'unica acci\'on en la interfaz tradicional.
+
+El reemplazar directamente clics y pulsaciones de teclas por comandos de voz da
+como resultado una interfaz poco natural y dif{\'\i}cil de utilizar. Por tanto, para
+\foreign{TamTam Listens}, fue necesario replantear por completo el modo de acceso a las 
+funcionalidades de manera independiente a la interfaz gr\'afica.
+
+A modo de ejemplo, para cambiar el volumen en \emph{TamTam Edit} se requiere presionar un 
+bot\'on para desplegar un submen\'u y utilizar un \emph{slider}, mientras que en \emph{TamTam Listens}
+es necesario un \'unico comando ``Aumentar/Disminuir Volumen''.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (2)}
+\framesubtitle{Dise\~no de la Interfaz}
+\begin{itemize}
+
+\item{\textbf{Interactuar con la aplicaci\'on, no con la interfaz gr\'afica\\}}
+En base a la experiencia, resulta recomendable asociar un comando a una funcionalidad
+y no a una \'unica acci\'on en la interfaz tradicional.
+
+El reemplazar directamente clics y pulsaciones de teclas por comandos de voz da
+como resultado una interfaz poco natural y dif{\'\i}cil de utilizar. Por tanto, para
+\foreign{TamTam Listens}, fue necesario replantear por completo el modo de acceso a las 
+funcionalidades de manera independiente a la interfaz gr\'afica.
+
+A modo de ejemplo, para cambiar el volumen en \emph{TamTam Edit} se requiere presionar un 
+bot\'on para desplegar un submen\'u y utilizar un \emph{slider}, mientras que en \emph{TamTam Listens}
+es necesario un \'unico comando ``Aumentar/Disminuir Volumen''.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (3)}
+\framesubtitle{Dise\~no de la Interfaz}
+\begin{itemize}
+
+\item{\textbf{Utilizar el sonido como medio de retroalimentaci\'on\\}}
+El protocolo de interacci\'on entre el usuario y la aplicaci\'on puede pensarse de forma similar a una 
+conversaci\'on entre personas. 
+
+El usuario accede a las funcionalidades a trav\'es de comandos de voz.
+A su vez, la aplicaci\'on puede utilizar la voz, o el sonido en general, para comunicar un mensaje al usuario.
+
+En el caso particular de \emph{TamTam Listens}, se utilizaron notificaciones de audio para confirmar
+ciertas operaciones. Por ejemplo, al crear o editar una nota, se reproduce la misma a modo de
+confirmaci\'on.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (4)}
+\framesubtitle{Dise\~no de la Interfaz}
+\begin{itemize}
+\item{\textbf{Utilizar el sonido como medio de retroalimentaci\'on\\}}
+El protocolo de interacci\'on entre el usuario y la aplicaci\'on puede pensarse de forma similar a una 
+conversaci\'on entre personas. 
+
+El usuario accede a las funcionalidades a trav\'es de comandos de voz.
+A su vez, la aplicaci\'on puede utilizar la voz, o el sonido en general, para comunicar un mensaje al usuario.
+
+En el caso particular de \emph{TamTam Listens}, se utilizaron notificaciones de audio para confirmar
+ciertas operaciones. Por ejemplo, al crear o editar una nota, se reproduce la misma a modo de
+confirmaci\'on.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Conclusiones (5)}
+\framesubtitle{Implementaci\'on de la Interfaz}
+\begin{itemize}
+
+\item{\textbf{Seleccionar las herramientas de acuerdo al \mbox{proyecto}\\}}
+La herramienta elegida tiene gran influencia sobre el posterior proceso de
+desarrollo, por lo cual esta decisi\'on debe tomarse analizando las caracter{\'\i}sticas
+propias del proyecto en cuesti\'on.
+
+Algunas cuestiones que pueden tomarse en consideraci\'on son:
+
+\begin{itemize}
+    \item El tiempo del que se dispone.
+    \item El dinero del que se dispone.
+    \item El conocimiento t\'ecnico del equipo de desarrolladores.
+    \item La plataforma sobre la cual debe ejecutarse el sistema.
+    \item La necesidad de que el sistema funcione sin conexi\'on a internet.
+    \item El soporte existente para el idioma que se busca reconocer.
+\end{itemize}
+
+La evaluaci\'on de varias opciones disponibles para la implementaci\'on de un sistema
+basado en reconocimiento del habla, cuyos resultados se incluyen como parte de este
+trabajo, permiti\'o realizar la selecci\'on de manera debidamente informada y justificada.
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Conclusiones (6)}
+\framesubtitle{Implementaci\'on de la Interfaz}
+\begin{itemize}
+
+\item{\textbf{Considerar la posibilidad de errores en el \emph{software}\\}}
+Las primeras pruebas de \foreign{TamTam Listens} arrojaron tasas de error y tiempos de
+respuesta muy elevados, relacionados a un componente que se planeaba utilizar
+para integrar \foreign{TamTam Edit} con \foreign{PocketSphinx}.
+
+Luego de numerosos intentos fallidos, se opt\'o por desechar el componente e implementar una soluci\'on 
+utilizando \emph{D-Bus} para la integraci\'on. 
+
+La identificaci\'on de la causa del problema y la
+b\'usqueda de una soluci\'on conllevaron un retraso significativo en la etapa de desarrollo.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (7)}
+\framesubtitle{Implementaci\'on de la Interfaz}
+\begin{itemize}
+
+\item{\textbf{Realizar pruebas y modificaciones tempranas\\}}
+Una vez que se cuenta con un prototipo m{\'\i}nimo de la aplicaci\'on, la realizaci\'on de pruebas
+preliminares puede ofrecer resultados interesantes para el mejoramiento de la 
+interfaz por voz del usuario.
+
+En las caso de \foreign{TamTam Listens}, las pruebas preliminares hicieron notorios dos
+inconvenientes: la elevada tasa de error para los comandos de una o dos palabras
+y el efecto negativo de las palabras fuera del vocabulario para la precisi\'on del sistema. 
+
+Estos resultados obligaron a realizar modificaciones sobre el lenguaje inicialmente planteado, 
+permitiendo disminuir la tasa de error del sistema previamente a las pruebas con usuarios finales.
+\end{itemize}
+\end{frame}
+
+HOLAAAAAA
+
+\begin{frame}{Conclusiones (8)}
+\framesubtitle{Prueba con Usuarios: Correlaci\'on}
+\begin{itemize}
+\item{\textbf{Errar es humano: Los usuarios prefieren probar (y fallar) a leer\\}}
+Como puede observarse en el cuadro \ref{sec:tabla-correlacion}, la tasa de acierto del 
+sistema ($A$) result\'o relacionada positivamente a la tasa de error humano ($E_2$) y la cantidad total de
+errores del usuario ($E_3$). 
+
+As{{\'\i}} tambi\'en, según los resultados expuestos en el cuadro \ref{sec:tabla-correlacion-2}, 
+la cantidad total de comandos que utiliz\'o el usuario ($U$) result\'o relacionada positivamente con
+ambas medidas del error humano ($E_2$ y $E_3$) y con el acierto del sistema ($A$).
+
+Las relaciones anteriormente mencionadas parecen sugerir que el error humano no es necesariamente
+un indicador negativo, afirmaci\'on que parece reforzarse con la correlaci\'on positiva, aunque moderada
+a d\'ebil, entre las medidas del error humano  ($E_2$ y $E_3$) y la correctitud de la \'ultima 
+tarea ($C$). Este valor indica que, en general, los usuarios que se equivocaron m\'as completaron 
+mejor la tarea cuatro.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (9)}
+\framesubtitle{Prueba con Usuarios: Correlaci\'on}
+\begin{itemize}
+\item{\textbf{Considerar la memoria del usuario al evaluar los resultados\\}}
+Resulta notoria en el cuadro \ref{sec:tabla-correlacion} la relación negativa de la memoria del usuario 
+($M$) con las medidas de error humano  ($E_2$ y $E_3$)  y la duraci\'on de las 
+tareas ($T_{1+2}$ y $T_{3+4}$) , lo cual puede considerarse como un 
+indicador de la importancia de este factor. 
+
+Esto es, en general, los usuarios con mayor puntaje en el 
+test de memoria tardaron menos en realizar las tareas y cometieron menos errores.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Conclusiones (10)}
+\framesubtitle{Prueba con Usuarios: Correlaci\'on}
+\begin{itemize}
+\item{\textbf{Validar hip\'otesis triviales\\}}
+Los resultados para algunas de las correlaciones de ambos cuadros de la sección \ref{sec:correlacion} son,
+de cierta manera, previsibles. 
+Si los resultados obtenidos no coinciden con las expectativas,
+puede representar una se\~nal de alerta de alg\'un problema con la interfaz o con el an\'alisis realizado.
+
+Por ejemplo, los usuarios para quienes la tasa de acierto del sistema ($A$) fue mayor obtuvieron 
+mejores resultados en las tareas ($C$). Adem\'as, aquellos usuarios con mayor tasa de error ($E_2$)
+tardaron m\'as en terminar las tareas ($T_{1+2}$). Estas afirmaciones se verifican mediante las 
+correlaciones expuestas en el cuadro \ref{sec:tabla-correlacion}
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Conclusiones (11)}
+\framesubtitle{Prueba con Usuarios: An\'alisis del Error Humano}
+\begin{itemize}
+\item{\textbf{Evitar comandos de m\'as de 4 palabras\\}}
+Los resultados del cuadro \ref{sec:error-longitud} muestran que la tasa de error var{{\'\i}}a 
+poco para los comandos de 2, 3, 4 palabras y aumenta considerablemente para los comandos de 5 y 
+6 palabras.
+
+Por este motivo, se sugiere que los comandos de una interfaz por voz del usuario 
+no superen la longitud de 4 palabras.
+
+Sin embargo, cabe destacar que esto representa un desaf{{\'\i}}o adicional a tener en cuenta.
+Durante la etapa de implementaci\'on, pudo constatarse que los comandos de poca longitud presentaban
+a menudo tasas de errores superiores a la media del sistema.
+
+Mantener el equilibrio entre error humano y error de la aplicaci\'on, de acuerdo a la longitud
+de los comandos, podr{{\'\i}}a suponer un problema no trivial. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (12)}
+\framesubtitle{Prueba con Usuarios: An\'alisis del Error Humano}
+\begin{itemize}
+\item{\textbf{El contexto de los comandos no es lo (\'unico) que importa\\}}
+Los resultados de el cuadro \ref{sec:error-contexto}, contrariamente a lo que podr{\'\i}a esperarse,
+sugieren que no existe correlaci\'on entre el contexto de los comandos y la tasa de error humano asociada.
+
+El an\'alisis de los datos de la prueba de usabilidad indica que el nivel contextual de los comandos no
+fue determinante para la tasa de error humano, aunque cabe destacar que esto no permite descartar
+por completo la influencia de este factor sobre el rendimiento de los usuarios.
+
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (13)}
+\framesubtitle{Prueba con Usuarios: An\'alisis del Error Humano}
+\begin{itemize}
+\item{\textbf{Dar la debida importancia al entrenamiento del usuario\\}}
+En la figura \ref{figure:gerror-tiempo} puede observarse una mayor concentraci\'on del error humano
+desde el inicio hasta el 40\% del tiempo transcurrido. Esto podr{{\'\i}}a atribuirse a un periodo de
+aprendizaje de uso de la interfaz.
+
+La recomendaci\'on en este caso es otorgar la debida importancia al entrenamiento previo del usuario,
+el cual se considera como el principal medio para disminuir la tasa de error humano inicial.
+
+La duraci\'on y el dise\~no de las actividades de entrenamiento son puntos a tener en cuenta
+al presentar una interfaz mediante voz del usuario.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (14)}
+\framesubtitle{Prueba con Usuarios: An\'alisis del Error Humano}
+\begin{itemize}
+\item{\textbf{Considerar factores humanos como la fatiga\\}}
+En la misma figura puede apreciarse un leve aumento en la tasa de error hacia el final de cada
+sesi\'on, lo que podr{{\'\i}}a un efecto del agotamiento sobre el usuario utilizando la
+interfaz mediante voz.
+
+
+Esta informaci\'on representa una llamada de atenci\'on hacia los factores humanos de la interacci\'on.
+Los efectos influencia del cansancio, la frustraci\'on ante el error e incluso el estado de \'animo
+del usuario no deben menospreciarse, e incluso podr{\'\i}an considerarse como tema para estudios
+posteriores. 
+
+Otro punto importante a considerar es que las tareas aumentaban en complejidad a medida que
+el sujeto avanzaba en el experimento.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (15)}
+\framesubtitle{Prueba con Usuarios: An\'alisis del Error Humano}
+\begin{itemize}
+\item{\textbf{Reconsiderar los comandos con tasa de error elevada\\}}
+Por \'ultimo, las tasas de error humano y del sistema permiten identificar comandos 
+problem\'aticos que pueden modificarse en una versi\'on siguiente de la aplicaci\'on.
+
+A modo de ejemplo, los comandos con mayor tasa de error humano se exponen en el 
+cuadro ~\ref{sec:tabla-lista-comandos-error}.
+Estos comandos son candidatos a ser modificados de modo a mejorar la usabilidad de la
+aplicaci\'on.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Conclusiones (16)}
+\framesubtitle{Prueba con Usuarios: Encuesta}
+\begin{itemize}
+
+\item{\textbf{Opini\'on positiva de los usuarios hacia \emph{TamTam Listens} y el reconocimiento del habla\\}}
+Los resultados de la encuesta expuestos en la secci\'on \ref{sec:resultados-encuesta},
+permiten conluir un elevado grado de satisfacci\'on de los usuarios con \foreign{TamTam Listens} y una
+predisposici\'on positiva hacia las interfaces mediante voz en general.
+
+\item{\textbf{Los puntos a mejorar est\'an en las respuestas de los usuarios\\}}
+Algunas de las recomendaciones m\'as comunes realizadas por los usuarios fueron:
+
+\begin{itemize}
+    \item Reemplazar la palabra ``Duplicar'' por la palabra ``Copiar''. 
+    \item Reemplazar la palabra ``Exportar'' por la palabra ``Guardar''.
+    \item Eliminar la palabra ``Nueva'' de los comandos de creaci\'on.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusiones (17)}
+\framesubtitle{Prueba con Usuarios: Encuesta}
+\begin{itemize}
+
+\item{\textbf{Preferir aplicaciones poco interactivas para una interfaz por voz\\}}
+La mayor{{\'\i}}a de los usuarios expres\'o que utilizar{{\'\i}}a una interfaz mediante voz
+preferentemente en casos con un bajo grado de interactividad y un lenguaje sencillo.
+Por ejemplo, los usuarios expresaron que les gustar{{\'\i}}a manejar el televisor, la radio, 
+el horno microondas, entre otros, mediante la voz.
+\end{itemize}
 \end{frame}
