@@ -31,32 +31,29 @@ cada una de las cuales recibe una entrada (o varias) y produce una salida determ
 \end{figure}
 \end{frame}
 
-
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (3)}
-El modelo ac\'ustico y el modelo de lenguaje pueden requerir una fase de entrenamiento previa,
-durante la cual se utilizan datos de entrenamiento (audio y texto) para estimar los valores adecuados 
-para los par\'ametros de los modelos.
+\framesubtitle{Fase 1: Extracci\'on de caracter{\'\i}sticas}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{./graphics/formants.png}
+\caption{Representaci\'on del espectro en el cual pueden identificarse los picos espectrales o formantes 
+\cite{Jurafsky}.}
+\label{figure:formants}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{./graphics/spectrogram.png}
+\caption{Representaci\'on de un espectrograma, puede verse como una colecci\'on de espectros como la 
+    figura~\ref{figure:formants} ubicados uno despu\'es otro \cite{Jurafsky}.}
+\label{figure:spectrogram}
+\end{figure}
+
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (4)}
 \framesubtitle{Fase 1: Extracci\'on de caracter{\'\i}sticas}
-
-La fase de extracci\'on de caracter{\'\i}sticas inicia con la recepci\'on de una onda sonora, correspondiente a la voz.
-La misma puede caracterizarse mediante los formantes \cite{Fant1960acoustic} que se observan en un espectrograma.
-
-Durante esta fase se sigue un proceso de an\'alisis de se\~nal: muestreo, cuantificaci\'on y conversi\'on.
-Los detalles de este proceso dependen del conjunto de caracter{\'\i}sticas espectrales seleccionado 
-para representar la se\~nal. Ejemplos de estos conjuntos son las caracter{\'\i}sticas basadas en codificaci\'on
-predictiva lineal (LPC) \cite{KesarkarFeature2003}, las caracter{\'\i}sticas basadas en el an\'alisis predictivo
-lineal perceptual (PLP) \cite{Ellis08anintroduction} y los coeficientes cepstrales en escala de 
-Mel (MFCC) \cite{Jurafsky}.
-\end{frame}
-
-\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (5)}
-\framesubtitle{Fase 1: Extracci\'on de caracter{\'\i}sticas}
-Al t\'ermino de la fase de extracci\'on de caracter{\'\i}sticas se obtiene un conjunto de vectores de
-caracter{\'\i}sticas espectrales, cada uno de los cuales describe cuantitativamente una trama de la 
-onda sonora original.
 
 \begin{figure}[H] 
 \centering
@@ -67,42 +64,71 @@ onda sonora original.
 \end{frame}
 
 
-\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (6)}
-\framesubtitle{Fase 2: Decodificaci\'on}
-La fase de decodificaci\'on inicia con el conjunto de vectores de caracter{\'\i}sticas espectrales,
-resultado de la fase de extracci\'on de caracter{\'\i}sticas.
+\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (5)}
+\framesubtitle{Fase 2: Decodificaci\'on: Modelo de Lenguaje}
+Sean:
+\begin{itemize}
+    \item $V$, el conjunto finito de palabras que componen un lenguaje, tambi\'en conocido como vocabulario.
+    \item $V^\dag$, el conjunto infinito de oraciones que pueden formarse con palabras pertenecientes 
+        al vocabulario.
+    \item $x_1,x_2,\ldots,x_n$, una secuencia de palabras de longitud $n$.
+\end{itemize}
 
-El modelo de lenguaje busca predecir la probabilidad de una secuencia de palabras pertenecientes a un lenguaje.
-Los modelos de lenguaje basados en n-gramas \cite{JelinekTheDevelopment1986} y los basados en 
-gram\'aticas \cite{Wang2000} son com\'unmente utilizados.
+Un modelo de lenguaje \cite{CollinsLanguage} consiste en un conjunto finito $V$ y una funci\'on 
+de probabilidad $P(x_1,x_2,\ldots,x_n)$ tal que:
+\begin{enumerate}
+
+\item $\forall (x_1,x_2,\ldots,x_n) \in V^\dag, P(x_1,x_2,\ldots,x_n) \ge 0$
+
+\item $\displaystyle \sum_{(x_1,x_2,\ldots,x_n) \in V^\dag} P(x_1,x_2,\ldots,x_n) = 1$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (6)}
+\framesubtitle{Fase 2: Decodificaci\'on - Modelo Acústico}
+El modelo ac\'ustico permite estimar la probabilidad de una entrada ac\'ustica dada una secuencia de palabras. 
+
+Está compuesto por:
+\begin{itemize}
+    \item Modelos Ocultos de Markov
+    \item Diccionario Fonético
+\end{itemize}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=0.5\textwidth]{./graphics/hmm_palabra.png}
+\caption{Posible representaci\'on ac\'ustica de la palabra ``mes''. Basado en \cite{Jurafsky}.}
+\label{figure:hmm-palabra}
+\end{figure}
 
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (7)}
-\framesubtitle{Fase 2: Decodificaci\'on}
-El modelo ac\'ustico permite estimar la probabilidad de una entrada ac\'ustica dada una secuencia de palabras.
-El mismo est\'a formado por varios HMM y el diccionario fon\'etico \cite{huang-handbook10}.
+\framesubtitle{Fase 2: Decodificaci\'on - Búsqueda}
+El objetivo de la fase de decodificaci\'on puede ser considerado esencialmente como un problema de 
+b\'usqueda \cite{huang-handbook10}. Los algoritmos más comúnmente utilizados son:
 
-El algoritmo decodificador busca la secuencia de fonemas o subfonemas m\'as probable dados una 
-secuencia de observaciones y un HMM. Este \'unico HMM se construye
-mediante los componentes del modelo ac\'ustico y el modelo de lenguaje. El algoritmo de Viterbi y el 
-algoritmo A* son dos algoritmos decodificadores utilizados frecuentemente en el reconocimiento del 
-habla \cite{Jurafsky}.
+\begin{itemize}
+    \item Algoritmo de Viterbi.
+    \item Algoritmo A*.
+\end{itemize}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=0.5\textwidth]{./graphics/espacio.png}
+\caption{Espacio de b\'usqueda para un lenguaje simple de cuatro palabras. Traducido a partir de \cite{RenalsSearch}.}
+\label{figure:espacio-busqueda}
+\end{figure}
+
 \end{frame}
+
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (8)}
 \framesubtitle{Fase 2: Decodificaci\'on}
-La secuencia de fonemas o subfonemas puede convertirse a una secuencia de palabras utilizando el diccionario
-fon\'etico que forma parte del modelo ac\'ustico.
-
-Al finalizar la fase de decodificaci\'on se obtiene la secuencia de palabras m\'as probable dados los vectores
-de caracter{\'\i}sticas espectrales, con lo cual llega a su culminaci\'on el proceso b\'asico
-del reconocimiento del habla.
-
 \begin{figure}[H] 
 \centering
 \includegraphics[width=0.8\textwidth]{./graphics/decodificacion.png}
 \caption{Fase de decodificaci\'on. Gr\'afico basado en \cite{VerenichASR}.}
-\label{figure:hmm}
+\label{figure:decoding}
 \end{figure}
 \end{frame}

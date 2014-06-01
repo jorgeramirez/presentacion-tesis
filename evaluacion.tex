@@ -2,119 +2,59 @@
 
 \begin{frame}{Evaluaci\'on}
 \framesubtitle{Metodolog\'ia}
-Las pruebas se realizan con 12 estudiantes universitarios sin experiencia previa 
-con la aplicaci\'on, cantidad escogida seg\'un se recomienda en \cite{Hwang:2010}.
 
-Las sesiones se llevan a cabo durante 2 semanas en un Laboratorio de Inform\'atica de 
-la Facultad Poĺit\'ecnica de la Universidad Nacional de Asunci\'on, Paraguay.
-En cada sesi\'on participan un usuario y dos responsables de la prueba.
+Las pruebas se realizan con 12 estudiantes universitarios sin experiencia previa 
+con la aplicaci\'on, en un Laboratorio de Inform\'atica de la Facultad Poĺit\'ecnica de 
+la Universidad Nacional de Asunci\'on.
+
+Las características de cada sesión son:
+\begin{itemize}
+    \item Duración: aproximadamente una hora
+    \item Participantes:
+        \begin{itemize}
+            \item Usuario
+            \item Facilitador
+            \item Observador
+        \end{itemize}
+    \item Fases:
+        \begin{itemize}
+            \item Test de Memoria
+            \item Entrenamiento
+            \item Tareas
+            \item Encuesta de Usabilidad
+            \item Recopilación y Análisis de Datos
+        \end{itemize}   
+\end{itemize}
 \end{frame}
 
-Cada sesión tiene una duración aproximada de una hora y consta de las siguientes
-fases:
 
 \begin{frame}{Evaluaci\'on (2)}
-\framesubtitle{Fases de la Evaluaci\'on}
-\begin{enumerate}
-    \item Test de Memoria: basado en el Test de Aprendizaje Auditivo Verbal de Rey \cite{Lopez1998}.
-    Consiste en registrar cuantas palabras puede recordar el usuario, de una lista predeterminada de 15,
-    a lo largo de 5 repeticiones. 
-    \item Entrenamiento: se presentan al usuario una serie de videos instructivos y el manual de la 
-    aplicaci\'on.
-    \item Tareas: el usuario realiza una secuencia de cuatro tareas con \foreign{\mbox{TamTam Listens}}.
-    Las tareas se realizan con un nivel decreciente de asistencia al usuario.
-    
-    El c\'alculo de los valores de las m\'etricas relacionadas a la correctitud de la aplicaci\'on y al 
-    error humano, se realiza en base a las tareas 3 y 4, por realizarse estas sin asistencia del 
-    facilitador.
-\end{enumerate}
-\end{frame}
-
-
-\begin{frame}{Evaluaci\'on (3)}
-\framesubtitle{Fases de la Evaluaci\'on}
-\begin{enumerate}
-
-    \item Encuesta de Usabilidad: el usuario completa un breve cuestionario acerca de 
-    \foreign{TamTam Listens} y las interfaces mediante voz en general.
-    \item Recopilaci\'on y An\'alisis de Datos: se recopilan los datos de la sesi\'on para su posterior
-    sumarizaci\'on y an\'alisis. Estos datos incluyen los resultados del test de memoria, las grabaciones de las tareas y las respuestas de la encuesta de usabilidad.
-\end{enumerate}
-\end{frame}
-
-
-\begin{frame}{Evaluaci\'on (4)}
-\framesubtitle{Factores analizados}
-En base a los datos de las sesiones, se analizan los siguientes factores:
-
-\begin{enumerate}
-    \item Memoria del usuario:
-    Se mide a trav\'es de los resultados de la \'ultima repetici\'on del test de memoria 
-    ($\boldsymbol{M}$), siendo 12--13 el resultado promedio esperado.
-    \item Correctitud de la aplicaci\'on:
-    Se mide mediante la tasa de aciertos de comandos ($\boldsymbol{A}$),
-    la raz\'on entre la cantidad de comandos correctamente reconocidos  y la cantidad de comandos correctamente pronunciados por el usuario.
-    
-    El inverso aditivo de $\boldsymbol{A}$, la tasa de error de comandos ($\boldsymbol{E_1})$, tambi\'en se
-    incluye en los resultados.
-
-    \item Error Humano:
-    Se mide mediante la cantidad total de errores cometidos por el usuario ($\boldsymbol{E_3}$) y la tasa
-    de error ($\boldsymbol{E_2}$), la cual se define como la raz\'on entre la cantidad de comandos incorrectos
-    y la cantidad de comandos pronunciados.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{Evaluaci\'on (5)}
-\framesubtitle{Factores analizados}
-En base a los datos de las sesiones, se analizan los siguientes factores:
-
-\begin{enumerate}
-    \item Eficiencia:
-    Se mide utilizando el tiempo de duraci\'on en minutos de las tareas 1 y 2 ($\boldsymbol{T_{1+2}}$),
-    el tiempo de duraci\'on en minutos de las tareas 3 y 4 ($\boldsymbol{T_{3+4}}$) y la cantidad total 
-    de comandos diferentes utilizados por el usuario ($\boldsymbol{U}$).
-
-    Adem\'as, se considera la correctitud de la tarea 4 ($\boldsymbol{C}$) como medida de la eficiencia. 
-    Esta se define como la raz\'on entre la cantidad de operaciones correctamente realizadas y el total 
-    de operaciones (72).
-
-    \item Satisfacci\'on del Usuario: 
-    Se registra la opini\'on del usuario en una escala de Likert \cite{Allen:2007} del 1 al 7,
-    adem\'as de las sugerencias del mismo, con respecto a:
+\framesubtitle{Análisis de Datos}
     \begin{itemize}
-        \item Que tan adecuadas son palabras utilizadas.
-        \item Que tan adecuados son los comandos utilizados.
-        \item Que tan adecuada resulta la duraci\'on del entrenamiento.
-        \item Que tan frecuentemente utilizar{\'\i}a las interfaces por voz del usuario.
+        \item Memoria del Usuario: Test de Memoria ($M$)
+        \item Correctitud de la Aplicación
+            \begin{itemize}
+                \item Tasa de Acierto ($A$)
+                \item Tasa de Error de Comandos ($E_1$)
+            \end{itemize}
+        \item Error Humano
+            \begin{itemize}
+                \item Tasa de Error Humano ($E_2$)
+                    \begin{itemize}
+                        \item Tasa de Error por Longitud del Comando
+                        \item Tasa de Error por Nivel Contextual del Comando
+                        \item Tasa de Error por Comando
+                        \item Distribuci\'on del Error Humano por Etapas de la Sesi\'on 
+                    \end{itemize}
+                \item Cantidad de Errores ($E_3$)
+            \end{itemize}
+        \item Eficiencia
+            \begin{itemize}
+                \item Duración de Tareas Uno y Dos ($T_{1+2}$)
+                \item Duración de Tareas Tres y Cuatro($T_{3+4}$)
+                \item Cantidad de Comandos Utilizados ($U$)
+                \item Correctitud de la Tarea Cuatro ($C$)
+            \end{itemize}
+        \item Satisfacción del Usuario: Encuesta de Usabilidad
     \end{itemize}
-\end{enumerate}
-\end{frame}
-
-
-\begin{frame}{Evaluaci\'on (6)}
-\framesubtitle{An\'alisis del Error Humano}
-La tasa de error humano se analiza de manera m\'as detallada, realiz\'andose los siguientes c\'alculos:
-\begin{enumerate}
-    \item Tasa de Error Humano por Longitud del Comando: se calcula la tasa de error para las
-    diferentes longitudes de comandos (2 a 6 palabras).
-    \item Tasa de Error Humano por Nivel Contextual del Comando: se clasifican los comandos
-    seg\'un el contexto de su aplicaci\'on en generales, de pista y de comp\'as. La tasa de error
-    se calcula para cada categor{\'\i}a.
-    \item Tasa de Error Humano por Comando: se calcula la tasa de error para cada comando pronunciado
-    por al menos un usuario.
-\end{enumerate} 
-\end{frame}
-
-\begin{frame}{Evaluaci\'on (7)}
-\framesubtitle{An\'alisis del Error Humano}
-La tasa de error humano se analiza de manera m\'as detallada, realiz\'andose los siguientes c\'alculos:
-\begin{enumerate}
-    \item Distribuci\'on del Error Humano con respecto al Tiempo transcurrido: para cada usuario, 
-    se divide $\boldsymbol{T_{3+4}}$ en 10 etapas (de 10\% de la duraci\'on cada una).
-    Para cada etapa se calcula el porcentaje de errores cometidos, con respecto al total de
-    errores cometidos por el usuario ($\boldsymbol{E_3}$). 
-    La distribuci\'on se obtiene calculando el promedio de los valores correspondientes a 
-    cada uno de los usuarios.
-\end{enumerate} 
 \end{frame}
