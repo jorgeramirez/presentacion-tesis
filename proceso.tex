@@ -1,17 +1,10 @@
 \section{Proceso B\'asico del Reconocimiento del Habla}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla}
-Para un lenguaje $L$ y una entrada ac\'ustica $X$, el problema del reconocimiento del habla puede 
-definirse como \cite{Jurafsky}:
 
 \begin{quote}
 \emph{La b\'usqueda de la oraci\'on m\'as probable perteneciente al lenguaje L, dada la entrada ac\'ustica X.}
 \end{quote}
-
-Sean $O = o_1,o_2,\ldots,o_T$ la secuencia de $T$ observaciones ac\'usticas de entrada y 
-$W  = w_1,w_2,\ldots,w_M$ la secuencia de $M$ palabras de salida. Siendo $\hat{W}$ una aproximaci\'on 
-probabil{\'\i}stica de $W$, el enfoque estad{\'\i}stico define el problema de reconocimiento del habla 
-mediante la ecuaci\'on (\ref{eq:asrFundamental}) \cite{Jurafsky}:
 
 \begin{align}
 \hat{W} = \argmax_{W \in L} \overbrace{P(O|W)}^\text{M. ac\'ustico}\overbrace{P(W)}^\text{M. de lenguaje}
@@ -20,8 +13,6 @@ mediante la ecuaci\'on (\ref{eq:asrFundamental}) \cite{Jurafsky}:
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (2)}
-El proceso b\'asico del reconocimiento del habla, puede descomponerse en dos etapas o fases, 
-cada una de las cuales recibe una entrada (o varias) y produce una salida determinada.
 
 \begin{figure}[H] 
 \centering
@@ -86,9 +77,7 @@ de probabilidad $P(x_1,x_2,\ldots,x_n)$ tal que:
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (6)}
 \framesubtitle{Fase 2: Decodificaci\'on - Modelo Acústico}
-El modelo ac\'ustico permite estimar la probabilidad de una entrada ac\'ustica dada una secuencia de palabras. 
 
-Está compuesto por:
 \begin{itemize}
     \item Modelos Ocultos de Markov
     \item Diccionario Fonético
@@ -97,7 +86,7 @@ Está compuesto por:
 \begin{figure}[H] 
 \centering
 \includegraphics[width=0.5\textwidth]{./graphics/hmm_palabra.png}
-\caption{Posible representaci\'on ac\'ustica de la palabra ``mes''. Basado en \cite{Jurafsky}.}
+\caption{Representaci\'on ac\'ustica de la palabra ``mes''. Basado en \cite{Jurafsky}.}
 \label{figure:hmm-palabra}
 \end{figure}
 
@@ -105,8 +94,6 @@ Está compuesto por:
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (7)}
 \framesubtitle{Fase 2: Decodificaci\'on - Búsqueda}
-El objetivo de la fase de decodificaci\'on puede ser considerado esencialmente como un problema de 
-b\'usqueda \cite{huang-handbook10}. Los algoritmos más comúnmente utilizados son:
 
 \begin{itemize}
     \item Algoritmo de Viterbi.
