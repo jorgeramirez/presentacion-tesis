@@ -3,60 +3,85 @@
 \begin{frame}{Evaluaci\'on}
 \framesubtitle{Metodolog\'ia}
 
-\begin{itemize}
-    \item 12 estudiantes.
-    \item Laboratorio de Inform\'atica de la FPUNA.
-    \item 2 semanas.
-\end{itemize}
+\uncover<+->{12 sesiones de prueba:}
 
-Las características de cada sesión son:
 \begin{itemize}
-    \item Duración: aproximadamente una hora
-    \item Participantes:
+    \vfill \item<+->{ Lugar: Laboratorio de Inform\'atica de la FPUNA.}
+    \vfill \item<+->{ Duraci\'on: aproximadamente una hora. } 
+    \vfill \item<+->{ Participantes:}
         \begin{itemize}
-            \item Usuario
-            \item Facilitador
-            \item Observador
+            \vfill \item<+->{ Usuario }
+            \vfill \item<+->{ Facilitador }
+            \vfill \item<+->{ Observador }
         \end{itemize}
-    \item Fases:
+    \vfill \item<+->{ Fases: }
         \begin{itemize}
-            \item Test de Memoria
-            \item Entrenamiento
-            \item Tareas
-            \item Encuesta de Usabilidad
-            \item Recopilación y Análisis de Datos
+            \vfill \item<+->{ Test de Memoria }
+            \vfill \item<+->{ Entrenamiento }
+            \vfill \item<+->{ Tareas }
+            \vfill \item<+->{ Encuesta de Usabilidad }
+            \vfill \item<+->{ Recopilaci\'on de los Datos }
         \end{itemize}   
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Evaluaci\'on (2)}
-\framesubtitle{Análisis de Datos}
-    \begin{itemize}
-        \item Memoria del Usuario: Test de Memoria ($M$)
-        \item Correctitud de la Aplicación
+\framesubtitle{An\'alisis de Datos}
+\vspace{-0.5em}
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{|p{1.2cm}|p{5.5cm}|p{2cm}}
+\hhline{--~}
+M\'etrica  &   Descripci\'on \\
+\hhline{--~}
+\uncover<1-13>{$M$} &       \uncover<1-13>{Resultado del test de memoria} & \uncover<1-13>{\rdelim\}{1}{2cm}[Memoria del Usuario]} \\
+\uncover<2-13>{$A$}  &      \uncover<2-13>{Tasa de Acierto}     & \uncover<2-13>{\rdelim\}{3}{2cm}[\parbox{3cm-\tabcolsep-\widthof{$\Bigg]$}}{Correctitud de la Aplicaci\'on}]} \\
+\uncover<3-13>{$E_1$} &     \uncover<3-13>{Tasa de Error de Comandos}  \\
+\uncover<4-13>{$E_2$} &    \uncover<4-13>{Tasa de Error Humano}  
             \begin{itemize}
-                \item Tasa de Acierto ($A$)
-                \item Tasa de Error de Comandos ($E_1$)
-            \end{itemize}
-        \item Error Humano
-            \begin{itemize}
-                \item Tasa de Error Humano ($E_2$)
-                    \begin{itemize}
-                        \item Tasa de Error por Longitud del Comando
-                        \item Tasa de Error por Nivel Contextual del Comando
-                        \item Tasa de Error por Comando
-                        \item Distribuci\'on del Error Humano por Etapas de la Sesi\'on 
-                    \end{itemize}
-                \item Cantidad de Errores ($E_3$)
-            \end{itemize}
-        \item Eficiencia
-            \begin{itemize}
-                \item Duración de Tareas Uno y Dos ($T_{1+2}$)
-                \item Duración de Tareas Tres y Cuatro($T_{3+4}$)
-                \item Cantidad de Comandos Utilizados ($U$)
-                \item Correctitud de la Tarea Cuatro ($C$)
-            \end{itemize}
-        \item Satisfacción del Usuario: Encuesta de Usabilidad
-    \end{itemize}
+                \vfill \item<5-13>{ Por longitud del comando.}
+                \vfill \item<6-13>{ Por nivel contextual del comando.}
+                \vfill \item<7-13>{ Por comando.}
+                \vfill \item<8-13>{ Por etapas de la sesi\'on.}
+            \end{itemize}\vspace{-2em} & \uncover<4-13>{\rdelim\}{8}{2cm}[Error Humano]} \\
+\uncover<9-13>{$E_3$} &     \uncover<9-13>{Cantidad de Errores}  \\
+\uncover<10-13>{$T_{1+2}$} & \uncover<10-13>{Duraci\'on de Tareas Uno y Dos}  & \uncover<10-13>{\rdelim\}{6}{2cm}[Eficiencia]} \\
+\uncover<11-13>{$T_{3+4}$} & \uncover<11-13>{Duraci\'on de Tareas Tres y Cuatro}  \\
+\uncover<12-13>{$C$} &       \uncover<12-13>{Correctitud de la Tarea Cuatro}  \\
+\uncover<13-13>{$U$} &       \uncover<13-13>{Cantidad de Comandos Utilizados}  \\
+\hline  
+\end{tabular}
+\end{table}
+
+
+
+    % \begin{itemize}
+    %     \item Memoria del Usuario: Test de Memoria ($M$)
+    %     \item Correctitud de la Aplicaci\'on
+    %         \begin{itemize}
+    %             \item Tasa de Acierto ($A$)
+    %             \item Tasa de Error de Comandos ($E_1$)
+    %         \end{itemize}
+    %     \item Error Humano
+    %         \begin{itemize}
+    %             \item Tasa de Error Humano ($E_2$)
+    %                 \begin{itemize}
+    %                     \item Tasa de Error por Longitud del Comando
+    %                     \item Tasa de Error por Nivel Contextual del Comando
+    %                     \item Tasa de Error por Comando
+    %                     \item Distribuci\'on del Error Humano por Etapas de la Sesi\'on 
+    %                 \end{itemize}
+    %             \item Cantidad de Errores ($E_3$)
+    %         \end{itemize}
+    %     \item Eficiencia
+    %         \begin{itemize}
+    %             \item Duraci\'on de Tareas Uno y Dos ($T_{1+2}$)
+    %             \item Duraci\'on de Tareas Tres y Cuatro($T_{3+4}$)
+    %             \item Cantidad de Comandos Utilizados ($U$)
+    %             \item Correctitud de la Tarea Cuatro ($C$)
+    %         \end{itemize}
+    %     \item Satisfacci\'on del Usuario: Encuesta de Usabilidad
+    % \end{itemize}
 \end{frame}

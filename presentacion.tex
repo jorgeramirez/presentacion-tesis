@@ -33,6 +33,10 @@
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
+\usepackage{multirow, bigdelim}
+\usepackage{hhline}
+\usepackage{calc}
+
 
 
 % \usepackage{algpseudocode}
@@ -151,6 +155,12 @@
                 {\includegraphics[#1]{#2}};%
     }
 } 
+
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+
 \makeatother
 
 %\pgfdeclareimage[height=1.4cm]{logo_XIVsm}{semanauniversitaria}
