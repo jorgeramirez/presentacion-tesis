@@ -56,22 +56,27 @@
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (5)}
 \framesubtitle{Fase 2: Decodificaci\'on: Modelo de Lenguaje}
-Sean:
+\uncover<1-3>{Probabilidad de ocurrencia de una secuencia de palabras $x_1,x_2,\ldots,x_n$ para un lenguaje dado.}
+\vspace*{2\baselineskip}
 \begin{itemize}
-    \item $V$, el conjunto finito de palabras que componen un lenguaje, tambi\'en conocido como vocabulario.
-    \item $V^\dag$, el conjunto infinito de oraciones que pueden formarse con palabras pertenecientes 
-        al vocabulario.
-    \item $x_1,x_2,\ldots,x_n$, una secuencia de palabras de longitud $n$.
-\end{itemize}
-
-Un modelo de lenguaje \cite{CollinsLanguage} consiste en un conjunto finito $V$ y una funci\'on 
-de probabilidad $P(x_1,x_2,\ldots,x_n)$ tal que:
-\begin{enumerate}
-
-\item $\forall (x_1,x_2,\ldots,x_n) \in V^\dag, P(x_1,x_2,\ldots,x_n) \ge 0$
-
-\item $\displaystyle \sum_{(x_1,x_2,\ldots,x_n) \in V^\dag} P(x_1,x_2,\ldots,x_n) = 1$
-\end{enumerate}
+    \uncover<2-3>{\item Basado en N-Gramas
+        \small \begin{equation*}
+            \hspace*{-1.5cm} 
+            p(\text{el, hombre, corre}) = p(el \mid \text{\textless} s\text{\textgreater}) \, 
+            p(\text{\emph{hombre}} \mid el) \, p(corre \mid \text{\emph{hombre}}) \, 
+            p(\text{\textless} /s\text{\textgreater} \mid corre)
+        \end{equation*}}
+        \vspace*{1\baselineskip}
+        \uncover<3-3>{\item Basado en Gramática
+        \begin{bnf*}
+            \bnfprod{pregunta}
+            {\bnfts{Cu\'al} \bnfsp \bnfts{es} \bnfsp \bnfts{la}  \bnfpn{info} \bnfsp  \bnfts{en} \bnfsp \bnfpn{ciudad}} \\
+            \bnfprod{info}
+            {\bnfts{temperatura} \bnfor \bnfts{presi\'on atmosf\'erica} \bnfor \bnfts{hora}} \\
+            \bnfprod{ciudad}
+            {\bnfts{Par{\'\i}s} \bnfor \bnfts{Nueva York} \bnfor \bnfts{Roma}}
+        \end{bnf*}}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (6)}
