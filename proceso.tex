@@ -16,12 +16,51 @@
 
 \begin{figure}[H] 
 \centering
-\includegraphics[width=0.8\textwidth]{./graphics/proceso.png}
+\includegraphics[width=0.8\textwidth]{./graphics/proceso_0.png}
 \caption{Proceso del reconocimiento del habla. Traducido a partir de \protect\cite{VerenichASR}.}
 \label{figure:proceso}
 \end{figure}
 \end{frame}
 
+\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (2)}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=0.8\textwidth]{./graphics/proceso_1.png}
+\caption{Proceso del reconocimiento del habla. Traducido a partir de \protect\cite{VerenichASR}.}
+\label{figure:proceso}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (2)}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=0.8\textwidth]{./graphics/proceso_2.png}
+\caption{Proceso del reconocimiento del habla. Traducido a partir de \protect\cite{VerenichASR}.}
+\label{figure:proceso}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (2)}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=0.8\textwidth]{./graphics/proceso_3.png}
+\caption{Proceso del reconocimiento del habla. Traducido a partir de \protect\cite{VerenichASR}.}
+\label{figure:proceso}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Proceso B\'asico del Reconocimiento del Habla (2)}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[width=0.8\textwidth]{./graphics/proceso.png}
+\caption{Proceso del reconocimiento del habla. Traducido a partir de \protect\cite{VerenichASR}.}
+\label{figure:proceso}
+\end{figure}
+\end{frame}
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (3)}
 \framesubtitle{Fase 1: Extracci\'on de caracter{\'\i}sticas}
 \begin{figure}[H]
@@ -67,7 +106,7 @@
             p(\text{\textless} /s\text{\textgreater} \mid corre)
         \end{equation*}}
         \vspace*{1\baselineskip}
-        \uncover<3-3>{\item Basado en Gramática
+        \uncover<3-3>{\item Basado en Gram\'atica
         \begin{bnf*}
             \bnfprod{pregunta}
             {\bnfts{Cu\'al} \bnfsp \bnfts{es} \bnfsp \bnfts{la}  \bnfpn{info} \bnfsp  \bnfts{en} \bnfsp \bnfpn{ciudad}} \\
@@ -80,36 +119,62 @@
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (6)}
-\framesubtitle{Fase 2: Decodificaci\'on - Modelo Acústico}
+\framesubtitle{Fase 2: Decodificaci\'on - Modelo Ac\'ustico}
 
+\setbeamercovered{transparent}
+\begin{columns}
+\column{0.45\linewidth}
+\onslide<1-8>{
 \begin{itemize}
-    \item Modelos Ocultos de Markov
-    \item Diccionario Fonético
+    \uncover<1-8>{\item Modelos Ocultos de Markov}
+        \begin{itemize}
+                \uncover<3-8>{\item Estados: $S$}
+                \uncover<4-8>{\item Observaciones: $V$}
+                \uncover<5-8>{\item Probabilidad inicial: $\pi$}
+                \uncover<6-8>{\item Probabilidad de transici\'on: $a$}
+                \uncover<7-8>{\item Probabilidad de observaci\'on: $b$}
+        \end{itemize}
+    \uncover<8-8>{\item Diccionario Fon\'etico}
 \end{itemize}
+}
 
-\begin{figure}[H] 
+\column{0.55\linewidth}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{./graphics/hmm_palabra.png}
-\caption{Representaci\'on ac\'ustica de la palabra ``mes''. Basado en \cite{Jurafsky}.}
-\label{figure:hmm-palabra}
+\uncover<2-8>{
+\only<2-8>{
+\includegraphics[width=1\textwidth]{./graphics/hmm.png}
+\caption{Representaci\'on de un modelo oculto de Markov.}}}
+\label{figure:esquema-herramientas}
 \end{figure}
+\end{columns}
+
 
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (7)}
-\framesubtitle{Fase 2: Decodificaci\'on - Búsqueda}
+\framesubtitle{Fase 2: Decodificaci\'on - B\'usqueda}
 
+\setbeamercovered{transparent}
+\begin{columns}
+\column{0.30\linewidth}
+\onslide<1-3>{
 \begin{itemize}
-    \item Algoritmo de Viterbi.
-    \item Algoritmo A*.
+    \uncover<2-3>{\item Algoritmo de Viterbi.}
+    \uncover<3-3>{\item Algoritmo A*.}
 \end{itemize}
+}
 
-\begin{figure}[H] 
+\column{0.7\linewidth}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{./graphics/espacio.png}
-\caption{Espacio de b\'usqueda para un lenguaje simple de cuatro palabras. Traducido a partir de \cite{RenalsSearch}.}
+\uncover<1-3>{
+\includegraphics[width=0.8\textwidth]{./graphics/espacio.png}
+\caption{Espacio de b\'usqueda para un lenguaje simple de cuatro palabras. Traducido a partir de \cite{RenalsSearch}.}}
 \label{figure:espacio-busqueda}
 \end{figure}
+\end{columns}
+
 
 \end{frame}
 

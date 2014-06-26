@@ -3,80 +3,53 @@
 \begin{frame}{Resultados Obtenidos}
 \framesubtitle{Metodolog\'ia}
 
-
-
-\framesubtitle{An\'alisis de Datos}
-\vspace{-0.5em}
 \begin{table}[H]
 \centering
 \footnotesize
-\begin{tabular}{|p{1.2cm}|p{5.5cm}|p{2cm}}
-\hhline{--~}
-M\'etrica  &   Descripci\'on & \\
-\hhline{--~}
-$M$ &       12,75 palabras & \rdelim\}{1}{2cm}[Memoria del Usuario] \\
-$A$  &      83,70 \% & \rdelim\}{2}{2cm}[\parbox{3cm-\tabcolsep-\widthof{$\Bigg]$}}{Correctitud de la Aplicaci\'on}] \\
+\caption{Resumen de las variables de la prueba de usabilidad}
+\begin{tabular}{|p{1.2cm}|p{2.4cm}|}
+\hline
+M\'etrica  &   Promedio \\
+\hline
+$M$ &       12,75  palabras  \\
+$A$  &      83,70 \%     \\
 $E_1$ &     16,30 \%  \\
-$E_2$ &     5,91 \% &  \rdelim\}{2}{2cm}[Error Humano] \\
-$E_3$ &    11,83 errores  \\
-$T_{1+2}$ & 13,83 minutos  & \rdelim\}{4}{2cm}[Eficiencia] \\
-$T_{3+4}$ & 18,35 minutos \\
-$C$ &       87,5 \%  \\
-$U$ &       40.67 comandos \\
-\hline 
+$E_2$  &    5,91  \%  \\
+$T_{1+2}$ & 13,83  minutos  \\
+$T_{3+4}$ & 18,35  minutos  \\
+$E_3$ &     11,83  errores  \\
+$C$ &       87,5   \%  \\
+$U$ &       40.67  comandos  \\
+\hline  
 \end{tabular}
+\label{sec:tabla-resumen-prueba}
 \end{table}
+
 \end{frame}
 
 \begin{frame}{Resulados Obtenidos}
 \framesubtitle{Correlaci\'on}
-
-\begin{itemize}
-    \only<1-1>{\item $A$ y $E_2$, 0,51
-    \item $A$ y $E_3$, 0,69}
-    
-    \only<2-2>{\item $U$ y $E_2$, 0,35
-    \item $U$ y $E_3$, 0,52
-    \item $U$ y $A$, 0,53}
-   
-    \only<3-3>{\item $M$ y $E_2$, -0,38
-    \item $M$ y $T_{1+2}$, -0,31
-    \item $M$ y $T_{3+4}$, -0,42}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Resulados Obtenidos}
-\framesubtitle{Correlaci\'on}
-
-\begin{itemize}
-    \uncover<+->{\item $A$ y $C$, 0,50}
-
-    \uncover<+->{\item $E_2$ y $T_{1+2}$, 0,40 
-    \item $E_3$ y $T_{1+2}$, 0,57
-    \item $E_3$ y $T_{3+4}$, 0,37}
-\end{itemize}
-
-%\begin{table}[H ] 
-%\centering
-%\footnotesize
-%\begin{tabular}{|p{0.5cm}|p{0.75cm}|p{0.7cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.7cm}|p{0.75cm}|}
-%\hline
-%& $M$ &  $A$  &   $E_1$ &  $E_2$  &  $T_{1+2}$  & $T_{3+4}$     & $E_3$ & $C$ & $U$ \\
-%\hline
-%$M$       &  1     &  0,22  & -0,22  & \textbf{-0,38}  &  \textbf{-0,31}  &  \textbf{-0,42}  &  -0,29 & -0,08    &  -0,23 \\
-%$A$       &  0,22  &  1  &  -1  &  \textbf{0,51}  &  0,14  &  -0,09  &  \textbf{0,69}  &  \textbf{0,5}           &  \textbf{0,53} \\
-%$E_1$     &  -0,22 &  -1  &  1  &  \textbf{-0,51}  &  -0,14  &  0,09  &  \textbf{-0,69}  &  \textbf{-0,5}        &  \textbf{-0,53} \\
-%$E_2$     &  \textbf{-0,38} &  \textbf{0,51}  &  \textbf{-0,51}  &  1  &  \textbf{0,4}  &  0,23  &  \textbf{0,71}  &  0,29         &  0,35  \\
-%$T_{1+2}$ &  \textbf{-0,31} &  0,14  &  -0,14  &  \textbf{0,4}  &  1  &  \textbf{0,87}  &  \textbf{0,57}  &  -0,04        &  0,25 \\
-%$T_{3+4}$ &  \textbf{-0,42} &  -0,09  &  0,09  &  0,23  &  \textbf{0,87}  &  1  &  0,37  &  -0,16       &  0,2 \\
-%$E_3$     &  -0,29 &  \textbf{0,69}  &  \textbf{-0,69}  &  \textbf{0,71}  &  \textbf{0,57}  &  \textbf{0,37}  &  1  &  0,28        &  \textbf{0,52} \\
-%$C$       &  -0,08 &  \textbf{0,5}  &  \textbf{-0,5}  &  0,29  &  -0,04  &  -0,16  &  0,28  &  1        &  0,13 \\
-%$U$       &  -0,23 &  \textbf{0,53}  &  \textbf{-0,53}  &  \textbf{0,35}  &  0,25  &  0,2  &  \textbf{0,52}  &  0,13      &  1 \\
-%\hline
-%\end{tabular}
-%\caption{Coeficientes de correlaci\'on para las m\'etricas consideradas.}
-%\label{sec:tabla-correlacion}
-%\end{table}
+\begin{table}[H] 
+\centering
+\footnotesize
+\begin{tabular}{|p{0.5cm}|p{0.75cm}|p{0.7cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.7cm}|p{0.75cm}|}
+\hline
+& $M$ &  $A$  &   $E_1$ &  $E_2$  &  $T_{1+2}$  & $T_{3+4}$     & $E_3$ & $C$ & $U$ \\
+\hline
+$M$       &  1     &  0,22  & -0,22  & \textbf{-0,38}  &  \textbf{-0,31}  &  \textbf{-0,42}  &  -0,29 & -0,08    &  -0,23 \\
+$A$       &  0,22  &  1  &  -1  &  \textbf{0,51}  &  0,14  &  -0,09  &  \textbf{0,69}  &  \textbf{0,5}           &  \textbf{0,53} \\
+$E_1$     &  -0,22 &  -1  &  1  &  \textbf{-0,51}  &  -0,14  &  0,09  &  \textbf{-0,69}  &  \textbf{-0,5}        &  \textbf{-0,53} \\
+$E_2$     &  \textbf{-0,38} &  \textbf{0,51}  &  \textbf{-0,51}  &  1  &  \textbf{0,4}  &  0,23  &  \textbf{0,71}  &  0,29         &  0,35  \\
+$T_{1+2}$ &  \textbf{-0,31} &  0,14  &  -0,14  &  \textbf{0,4}  &  1  &  \textbf{0,87}  &  \textbf{0,57}  &  -0,04        &  0,25 \\
+$T_{3+4}$ &  \textbf{-0,42} &  -0,09  &  0,09  &  0,23  &  \textbf{0,87}  &  1  &  0,37  &  -0,16       &  0,2 \\
+$E_3$     &  -0,29 &  \textbf{0,69}  &  \textbf{-0,69}  &  \textbf{0,71}  &  \textbf{0,57}  &  \textbf{0,37}  &  1  &  0,28        &  \textbf{0,52} \\
+$C$       &  -0,08 &  \textbf{0,5}  &  \textbf{-0,5}  &  0,29  &  -0,04  &  -0,16  &  0,28  &  1        &  0,13 \\
+$U$       &  -0,23 &  \textbf{0,53}  &  \textbf{-0,53}  &  \textbf{0,35}  &  0,25  &  0,2  &  \textbf{0,52}  &  0,13      &  1 \\
+\hline
+\end{tabular}
+\caption{Coeficientes de correlaci\'on para las m\'etricas consideradas.}
+\label{sec:tabla-correlacion}
+\end{table}
 
 \end{frame}
 
@@ -138,13 +111,13 @@ comp\'as cuatro & 13,19 \\
 \framesubtitle{An\'alisis del Error Humano}
 
 \begin{columns}
-\column{0.3\linewidth}
+\column{0.35\linewidth}
 \centering
 \begin{table}
 \tiny
 \begin{tabular}{|c|c|}
 \hline
-    Etapa & \% de la Tasa \\ & de Error Total \\
+    Etapa & \% de la Tasa de Error Total \\
     \hline
 0-10  &  11,62 \\
 10-20 &  13.49 \\
@@ -161,7 +134,8 @@ comp\'as cuatro & 13,19 \\
 \caption{Distribuci\'on del error humano por etapas de la sesi\'on.}
 \label{sec:error-tiempo}
 \end{table}
-\column{0.7\linewidth}
+
+\column{0.65\linewidth}
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{./graphics/error_tiempo.png}
@@ -191,7 +165,7 @@ Interfaz por Voz & 5.83 \\
 \end{tabular}
 \caption{Resumen de la encuesta realizada.}
 \label{sec:tabla-encuesta}
-\end{table} 
+\end{table}
 \column{0.65\linewidth}
 \begin{figure}[ht]
 \centering
