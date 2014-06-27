@@ -1,15 +1,18 @@
 \section{Proceso B\'asico del Reconocimiento del Habla}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla}
-
+\uncover<1-2>{
 \begin{quote}
 \emph{La b\'usqueda de la oraci\'on m\'as probable W perteneciente al lenguaje L, dada la entrada ac\'ustica 0.}
 \end{quote}
+}
 
+\uncover<2-2>{
 \begin{align}
 \hat{W} = \argmax_{W \in L} \overbrace{P(O|W)}^\text{M. ac\'ustico}\overbrace{P(W)}^\text{M. de lenguaje}
 \label{eq:asrFundamental}
 \end{align}
+}
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (2)}
@@ -63,6 +66,7 @@
 \end{frame}
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (3)}
 \framesubtitle{Fase 1: Extracci\'on de caracter{\'\i}sticas}
+\uncover<1-2>{
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{./graphics/formants.png}
@@ -70,15 +74,17 @@
 \cite{Jurafsky}.}
 \label{figure:formants}
 \end{figure}
+}
 
-
+\uncover<2-2>{
 \begin{figure}[H]
 \centering
+\only<2-2>{
 \includegraphics[width=0.7\linewidth]{./graphics/spectrogram.png}
-\caption{Representaci\'on de un espectrograma, puede verse como una colecci\'on de espectros  ubicados uno despu\'es de otro \cite{Jurafsky}.}
+\caption{Representaci\'on de un espectrograma, puede verse como una colecci\'on de espectros  ubicados uno despu\'es de otro \cite{Jurafsky}.}}
 \label{figure:spectrogram}
 \end{figure}
-
+}
 \end{frame}
 
 \begin{frame}{Proceso B\'asico del Reconocimiento del Habla (4)}
@@ -122,27 +128,28 @@
 \framesubtitle{Fase 2: Decodificaci\'on - Modelo Ac\'ustico}
 
 \setbeamercovered{transparent}
+\uncover<1-9>{Probabilidad de una entrada ac\'ustica $O$ dada una secuencia de \mbox{palabras $W$.}}
 \begin{columns}
 \column{0.45\linewidth}
-\onslide<1-8>{
+\onslide<2-9>{
 \begin{itemize}
-    \uncover<1-8>{\item Modelos Ocultos de Markov}
+    \uncover<1-9>{\item Modelos Ocultos de Markov}
         \begin{itemize}
-                \uncover<3-8>{\item Estados: $S$}
-                \uncover<4-8>{\item Observaciones: $V$}
-                \uncover<5-8>{\item Probabilidad inicial: $\pi$}
-                \uncover<6-8>{\item Probabilidad de transici\'on: $a$}
-                \uncover<7-8>{\item Probabilidad de observaci\'on: $b$}
+                \uncover<4-9>{\item Estados: $S$}
+                \uncover<5-9>{\item Observaciones: $V$}
+                \uncover<6-9>{\item Probabilidad inicial: $\pi$}
+                \uncover<7-9>{\item Probabilidad de transici\'on: $a$}
+                \uncover<8-9>{\item Probabilidad de observaci\'on: $b$}
         \end{itemize}
-    \uncover<8-8>{\item Diccionario Fon\'etico}
+    \uncover<9-9>{\item Diccionario Fon\'etico}
 \end{itemize}
 }
 
 \column{0.55\linewidth}
 \begin{figure}[H]
 \centering
-\uncover<2-8>{
-\only<2-8>{
+\uncover<3-9>{
+\only<3-9>{
 \includegraphics[width=1\textwidth]{./graphics/hmm.png}
 \caption{Representaci\'on de un modelo oculto de Markov.}}}
 \label{figure:esquema-herramientas}
