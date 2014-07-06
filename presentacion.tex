@@ -39,6 +39,8 @@
 \usepackage{hhline}
 \usepackage{calc}
 \usepackage{backnaur}
+\usepackage{pbox}
+
 
 
 % \usepackage{algpseudocode}
@@ -52,6 +54,15 @@
 \usepackage{chronosys}
 
 \newcommand{\foreign}[1]{{\it #1}}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Salida:}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicfor}{\textbf{por}}
+\renewcommand{\algorithmicdo}{\textbf{hacer}}
+\renewcommand{\algorithmicthen}{\textbf{entonces}}
+\renewcommand{\algorithmicreturn}{\textbf{retorna}}
+
 
 \setbeamertemplate{bibliography entry title}{}
 \setbeamertemplate{bibliography entry location}{}
@@ -230,6 +241,7 @@
 \printbibliography
 \end{frame}
 
+\input{anexos}
 
 
 \end{document}
