@@ -299,3 +299,41 @@ iniciales de $a_{ij}$ y $b_j(o_t)$, denominadas probabilidad de avance y probabi
 Utilizando estas probabilidades, se mejoran las estimaciones $a_{ij}$ y $b_j(o_t)$ mediante
 un proceso iterativo que se repite hasta que los valores converjan \cite{Rabiner89atutorial}.
 \end{frame}
+
+\begin{frame}{Anexos}
+\framesubtitle{Coeficientes de Correlaci\'on de Pearson}
+El coeficiente de Pearson es una medida del grado de correlaci\'on lineal o dependencia entre dos 
+variables $X$ e $Y$. El valor del coeficiente se encuentra entre -1 y 1 inclusive. 
+El valor -1 indica que las variables est\'an correlacionadas negativamente 
+(cuando $X$ crece, $Y$ decrece y viceversa), 0 indica que no existe correlaci\'on y 1 que existe una 
+correlaci\'on positiva (cuando $X$ crece, $Y$ crece).
+\end{frame}
+
+\begin{frame}{Anexos}
+\framesubtitle{Satisfacci\'on del Usuario (1/2)}
+La opini\'on del usuario se mide a trav\'es de los resultados de la encuesta que se realiza como parte de
+la prueba de usabilidad, posterior a la finalizaci\'on de las tareas. Las respuestas se
+registran utilizando una escala de Likert con valores del 1 al 7.
+\end{frame}
+
+\begin{frame}{Anexos}
+\framesubtitle{Satisfacci\'on del Usuario (2/2)}
+Posteriormente, de modo a eliminar el potencial efecto de los estilos de respuesta
+de los usuarios, se utiliza el m\'etodo de estandarizaci\'on 
+por rango para reescalar los resultados de la encuesta.
+
+Siendo:
+\begin{itemize}
+	\item $min_i$ la respuesta de menor valor del usuario $i$.
+	\item $max_i$ la respuesta de mayor valor del usuario $j$.
+\end{itemize}
+
+Para cada respuesta $s$ del usuario $i$, el valor ajustado $s_a$ se define como:
+
+\begin{equation*}
+s_a=\frac{s-min_i}{max_i-min_i}
+\end{equation*}
+
+
+De esta manera, todas las respuestas pasan a estar en el rango entre 0 y 1.  
+\end{frame}
