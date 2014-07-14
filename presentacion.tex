@@ -191,6 +191,11 @@
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 
+\def\insertpresentationendframe{\inserttotalframenumber}
+\makeatletter
+\g@addto@macro{\appendix}{\immediate\write\@auxout{\string\@writefile{nav}{\noexpand\headcommand{\noexpand\def\noexpand\insertpresentationendframe{\the\c@framenumber}}}}}
+\makeatother
+
 % para que entre bien el título en el footer
 \setbeamertemplate{footline}
 {
@@ -201,7 +206,7 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
     \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \insertframenumber{} / \insertpresentationendframe\hspace*{1ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -216,6 +221,7 @@
 \def\bibfont{\footnotesize}
 \defbibheading{bibliography}[\bibname]{}
 \addbibresource{referencias.bib}
+
 \begin{document}
 
 
@@ -243,6 +249,7 @@
 \printbibliography
 \end{frame}
 
+\appendix
 \input{anexos}
 
 

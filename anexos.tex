@@ -162,11 +162,11 @@ En otras palabras, el t\'ermino $P(O)$ es independiente de $W$. Por tanto:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\linewidth]{./graphics/mel_hz.png}
-\end{figure}
+\end{figure} 
 \end{frame}
 
 \begin{frame}[noframenumbering]{Anexos}
-\framesubtitle{Algoritmo de Viterbi (1/2)}
+\framesubtitle{Algoritmo de Viterbi (1/4)}
 El algoritmo utiliza una matriz de probabilidades $viterbi$, donde cada celda $viterbi[i,t]$ 
 contiene la probabilidad del mejor camino teniendo en cuenta las $t$ primeras observaciones y 
 terminando en el estado $i$ del modelo.
@@ -188,7 +188,7 @@ pasa por un estado $q_i$, entonces este camino incluye el mejor camino hasta $q_
 \end{frame}
 
 \begin{frame}[noframenumbering]{Anexos}
-\framesubtitle{Algoritmo de Viterbi (2/2)}
+\framesubtitle{Algoritmo de Viterbi (2/4)}
 
 \begin{algorithm}[H]
 \footnotesize
@@ -217,13 +217,27 @@ pasa por un estado $q_i$, entonces este camino incluye el mejor camino hasta $q_
 \RETURN $estados$
 \end{algorithmic}
 \end{algorithm}
-
 \end{frame}
 
+\begin{frame}[noframenumbering]{Anexos}
+\framesubtitle{Algoritmo de Viterbi (3/4)}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{./graphics/hmm-viterbi2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Anexos}
+\framesubtitle{Algoritmo de Viterbi (4/4)}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{./graphics/viterbi3.png}
+\end{figure}
+\end{frame}
 
 \begin{frame}[noframenumbering]{Anexos}
 \framesubtitle{Entrenamiento (1/4)}
-\subsection*{Modelo de Lenguaje}
+%\subsection*{Modelo de Lenguaje}
 
 El modelo se entrena contando las ocurrencias de cada n-grama en el corpus de texto, para luego
 normalizar el conteo dividiendo sobre la cantidad total de n-gramas en el corpus.
@@ -236,34 +250,23 @@ probabilidad \cite{CollinsLanguage}.
 
 \end{frame}
 
-\begin{frame}[noframenumbering][fragile]{Anexos}
-\framesubtitle{Entrenamiento(2/4)}
+\begin{frame}[noframenumbering]{Anexos}
+\framesubtitle{Entrenamiento (2/4)}
 
-\subsection*{HMM: Estructura del grafo de estados}
+%\subsection*{HMM: Estructura del grafo de estados}
 El conjunto de estados de cada HMM, $S$, y las transiciones entre estos estados se definen en base
-al diccionario fon\'etico. A modo de ejemplo, \mbox{CMUDdict \cite{CMUdict}} es un diccionario fon\'etico
+al diccionario fon\'etico. A modo de ejemplo, \mbox{CMUdict \cite{CMUdict}} es un diccionario fon\'etico
 que contiene correspondencias entre palabras y las secuencias de fonemas que las componen para m\'as de
 125.000 palabras del idioma ingl\'es.
 
-
 \begin{figure}[H]
-\begin{lstlisting}
-HOUSE  HH AW1 S
-HOUSEAL  HH AW1 S AH0 L 
-HOUSEBOAT  HH AW1 S B OW2 T
-HOUSEBOATS  HH AW1 S B OW2 T S
-HOUSEBROKEN  HH AW1 S B R OW2 K AH0 N
-HOUSECLEANING  HH AW1 S K L IY2 N IH0 NG
-HOUSED  HH AW1 Z D
-HOUSEFUL  HH AW1 S F AH0 L
-HOUSEGUEST  HH AW1 S G EH0 S T
-\end{lstlisting}
+\centering
+\includegraphics[width=0.8\linewidth]{./graphics/diccionario.png}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}[noframenumbering]{Anexos}
-\framesubtitle{Entrenamiento(3/4)}
+\framesubtitle{Entrenamiento (3/4)}
 Para cada HMM es necesario estimar los siguientes par\'ametros:
     \begin{itemize}
         \item Las probabilidades de estado inicial: $\pi_i$
@@ -282,7 +285,7 @@ Para esto se cuenta con \cite{Jurafsky}:
 \end{frame}
 
 \begin{frame}[noframenumbering]{Anexos}
-\framesubtitle{Entrenamiento(4/4)}
+\framesubtitle{Entrenamiento (4/4)}
 
 Para las probabilidades de estado inicial, se asume que cualquier estado es igualmente probable 
 como estado inicial. De manera similar, para las probabilidades de transici\'on se asume que, para cada estado, cualquier transici\'on a otro estado es igualmente probable.
@@ -298,6 +301,22 @@ El algoritmo de Baum--Welch calcula dos probabilidades adicionales en base a las
 iniciales de $a_{ij}$ y $b_j(o_t)$, denominadas probabilidad de avance y probabilidad de retroceso. 
 Utilizando estas probabilidades, se mejoran las estimaciones $a_{ij}$ y $b_j(o_t)$ mediante
 un proceso iterativo que se repite hasta que los valores converjan \cite{Rabiner89atutorial}.
+\end{frame}
+
+\begin{frame}[noframenumbering]{Anexos}
+\framesubtitle{Algoritmo de Baum--Welch}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{./graphics/forward-backward.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Anexos}
+\framesubtitle{Dynamic Time Warping}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{./graphics/dtw-anexos.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Anexos}
