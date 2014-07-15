@@ -1,4 +1,4 @@
-\documentclass[compress]{beamer}
+\documentclass[compress,dvipsnames*,svgnames]{beamer}
 %\documentclass[ignorenonframetext,handout]{beamer}
 %\setbeamercovered{transparent}
 %\usepackage[ISO 8859-1]{inputenc}
@@ -23,6 +23,7 @@
 %\usetikzlibrary{arrows,backgrounds,positioning,fit} 
 \usetikzlibrary{calc}
 % para gerar graficos no latex
+\usepackage{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 
@@ -241,14 +242,15 @@
 \input{evaluacion}
 \input{resultados}
 \input{conclusiones}
+\input{aportes}
 \input{trabajos}
 \input{publicaciones}
 
 %%% BIBLIOGRAFIA %%%
-\begin{frame}[allowframebreaks,noframenumbering]
-\frametitle{Referencias}
-\printbibliography
-\end{frame}
+% \begin{frame}[allowframebreaks,noframenumbering]
+% \frametitle{Referencias}
+% \printbibliography
+% \end{frame}
 
 \appendix
 \input{anexos}

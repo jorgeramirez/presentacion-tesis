@@ -7,100 +7,81 @@
 \vspace{-0.5em}
 \begin{table}[H]
 \centering
-\footnotesize
-\begin{tabular}{|p{1.2cm}|p{5.5cm}|p{2cm}}
-\hhline{--~}
-M\'etrica  &   Descripci\'on & \\
-\hhline{--~}
-$M$ &       12,75 palabras & \rdelim\}{1}{2cm}[Memoria del Usuario] \\
-$A$  &      83,70 \% & \rdelim\}{2}{2cm}[\parbox{3cm-\tabcolsep-\widthof{$\Bigg]$}}{Correctitud de la Aplicaci\'on}] \\
-$E_1$ &     16,30 \%  \\
-$E_2$ &     5,91 \% &  \rdelim\}{2}{2cm}[Error Humano] \\
-$E_3$ &    11,83 errores  \\
-$T_{1+2}$ & 13,83 minutos  & \rdelim\}{4}{2cm}[Eficiencia] \\
-$T_{3+4}$ & 18,35 minutos \\
-$C$ &       87,5 \%  \\
-$U$ &       40,67 comandos \\
-\cline{1-2} 
+\scriptsize
+\begin{tabular}{|p{0.9cm}|p{4.2cm}|p{2cm}|p{2cm}}
+\hhline{---~}
+M\'etrica  &   Descripci\'on & Valor  \\
+\hhline{---~}
+$M$ &   Resultado del test de memoria &  \textcolor{ForestGreen}{12,75 palabras} & \rdelim\}{1}{2cm}[Memoria del Usuario] \\
+\rule{0pt}{4ex}$A$       &   Tasa de Acierto               &  \textcolor{ForestGreen}{83,70 \%} & \rdelim\}{3}{2cm}[\parbox{3cm-\tabcolsep-\widthof{$\Bigg]$}}{Correctitud de la Aplicaci\'on}] \\
+ \rule{0pt}{4ex}$E_1$     & Tasa de Error de Comandos     &   \textcolor{Red}{16,30 \%}  \\
+ \rule{0pt}{4ex}$E_2$     & Tasa de Error Humano          &   \textcolor{Red}{5,91 \%} &  \rdelim\}{3}{2cm}[Error Humano] \\
+ \rule{0pt}{4ex}$E_3$     & Cantidad de Errores           &   \textcolor{Red}{11,83 errores}  \\
+ \rule{0pt}{4ex}$T_{1+2}$ & Duraci\'on de Tareas Uno y Dos  & \textcolor{Red}{13,83 minutos}  & \rdelim\}{6}{2cm}[Eficiencia] \\
+ \rule{0pt}{4ex}$T_{3+4}$ & Duraci\'on de Tareas Tres y Cuatro & \textcolor{Red}{18,35 minutos} \\
+ \rule{0pt}{4ex}$C$       & Correctitud de la Tarea Cuatro  &    \textcolor{ForestGreen}{87,5 \%}  \\
+ \rule{0pt}{4ex}$U$       & Cantidad de Comandos Utilizados &    \textcolor{ForestGreen}{40,67 comandos} \\
+\cline{1-3} 
 \end{tabular}
 \end{table}
+
+\textcolor{ForestGreen}{Mayor es mejor}
+
+\textcolor{Red}{Menor es mejor}
 \end{frame}
 
 \begin{frame}{Resulados Obtenidos (2/7)}
 \framesubtitle{Correlaci\'on}
+\only<1>{\centering{Tasa de Acierto y Medidas del Error Humano}}
+\only<2>{\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{./graphics/correlacion1.png}
+\end{figure}}
 
-\begin{itemize}
-    \visible<1->{\item $A$ y $E_2$, 0,51
-    \item $A$ y $E_3$, 0,69}
-    
-    \visible<2->{\item $U$ y $E_2$, 0,35
-    \item $U$ y $E_3$, 0,52
-    \item $U$ y $A$, 0,53}
-   
-    \visible<3->{\item $M$ y $E_2$, -0,38
-    \item $M$ y $T_{1+2}$, -0,31
-    \item $M$ y $T_{3+4}$, -0,42}
-\end{itemize}
+\only<3>{Comandos utilizados, Medidas de Error Humano y Tasa de Acierto}
+\only<4>{\begin{figure}[ht]
+\centering
+\includegraphics[width=1\linewidth]{./graphics/correlacion2.png}
+\end{figure}}
+
+\only<5>{Memoria del usuario, Tasa de Error Humano y Duraci\'on de las Tareas}
+\only<6>{\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{./graphics/correlacion3.png}
+\end{figure}}
 \end{frame}
+
 
 \begin{frame}{Resulados Obtenidos (3/7)}
 \framesubtitle{Correlaci\'on}
+\only<1>{\centering{Tasa de Acierto y Correctitud de la Tarea 4}}
+\only<2>{\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{./graphics/correlacion4.png}
+\end{figure}}
 
-\begin{itemize}
-    \uncover<+->{\item $A$ y $C$, 0,50}
-
-    \uncover<+->{\item $E_2$ y $T_{1+2}$, 0,40 
-    \item $E_3$ y $T_{1+2}$, 0,57
-    \item $E_3$ y $T_{3+4}$, 0,37}
-\end{itemize}
-
-%\begin{table}[H ] 
-%\centering
-%\footnotesize
-%\begin{tabular}{|p{0.5cm}|p{0.75cm}|p{0.7cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.7cm}|p{0.75cm}|}
-%\hline
-%& $M$ &  $A$  &   $E_1$ &  $E_2$  &  $T_{1+2}$  & $T_{3+4}$     & $E_3$ & $C$ & $U$ \\
-%\hline
-%$M$       &  1     &  0,22  & -0,22  & \textbf{-0,38}  &  \textbf{-0,31}  &  \textbf{-0,42}  &  -0,29 & -0,08    &  -0,23 \\
-%$A$       &  0,22  &  1  &  -1  &  \textbf{0,51}  &  0,14  &  -0,09  &  \textbf{0,69}  &  \textbf{0,5}           &  \textbf{0,53} \\
-%$E_1$     &  -0,22 &  -1  &  1  &  \textbf{-0,51}  &  -0,14  &  0,09  &  \textbf{-0,69}  &  \textbf{-0,5}        &  \textbf{-0,53} \\
-%$E_2$     &  \textbf{-0,38} &  \textbf{0,51}  &  \textbf{-0,51}  &  1  &  \textbf{0,4}  &  0,23  &  \textbf{0,71}  &  0,29         &  0,35  \\
-%$T_{1+2}$ &  \textbf{-0,31} &  0,14  &  -0,14  &  \textbf{0,4}  &  1  &  \textbf{0,87}  &  \textbf{0,57}  &  -0,04        &  0,25 \\
-%$T_{3+4}$ &  \textbf{-0,42} &  -0,09  &  0,09  &  0,23  &  \textbf{0,87}  &  1  &  0,37  &  -0,16       &  0,2 \\
-%$E_3$     &  -0,29 &  \textbf{0,69}  &  \textbf{-0,69}  &  \textbf{0,71}  &  \textbf{0,57}  &  \textbf{0,37}  &  1  &  0,28        &  \textbf{0,52} \\
-%$C$       &  -0,08 &  \textbf{0,5}  &  \textbf{-0,5}  &  0,29  &  -0,04  &  -0,16  &  0,28  &  1        &  0,13 \\
-%$U$       &  -0,23 &  \textbf{0,53}  &  \textbf{-0,53}  &  \textbf{0,35}  &  0,25  &  0,2  &  \textbf{0,52}  &  0,13      &  1 \\
-%\hline
-%\end{tabular}
-%\caption{Coeficientes de correlaci\'on para las m\'etricas consideradas.}
-%\label{sec:tabla-correlacion}
-%\end{table}
-
+\only<3>{\centering{Medidas de Error y Duraci\'on de las Tareas}}
+\only<4>{\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{./graphics/correlacion5.png}
+\end{figure}}
 \end{frame}
 
 \begin{frame}{Resultados Obtenidos (4/7)}
 \framesubtitle{An\'alisis del Error Humano}
 
-\uncover<+->{\begin{table}[H]
+\only<1>{\begin{figure}[ht]
 \centering
-\footnotesize
-\begin{tabular}{|p{1.2cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|}
-\hline
-    Sujeto & 2 & 3 & 4 & 5 & 6  \\
-    \hline 
-    Promedio & 6,96 & 5,68 & 7,46 & 14,81 & 42,11 \\
-\hline
-\end{tabular}
+\includegraphics[width=0.9\linewidth]{./graphics/longitud-error.png}
 \caption{Tasa de error humano por longitud del comando.}
-\label{sec:error-longitud}
-\end{table}}
+\end{figure}}
 
-\uncover<+->{\begin{table}[H]
+\only<2>{\begin{table}[H]
 \centering
 \footnotesize
 \begin{tabular}{|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
 \hline
-    Sujeto & General & Pista & Comp\'as \\
+    Contexto & General & Pista & Comp\'as \\
 \hline
 Promedio & 13,25 & 3,57 & 5,16 \\
 \hline
@@ -109,8 +90,7 @@ Promedio & 13,25 & 3,57 & 5,16 \\
 \label{sec:error-contexto}
 \end{table}}
 
-
-\uncover<+->{\begin{table}[H]
+\only<3>{\begin{table}[H]
 \centering
 \footnotesize
 \begin{tabular}{|l|p{3cm}|}
@@ -202,8 +182,13 @@ Interfaz por Voz & 5,83 \\
 
 \begin{frame}{Resultados Obtenidos (7/7)}
 \framesubtitle{Encuesta}
+
 \begin{columns}
 \column{0.35\linewidth}
+\begin{equation*}
+s_a=\frac{s-min_i}{max_i-min_i}
+\end{equation*}
+
 \begin{table}[H] 
 \centering
 \tiny

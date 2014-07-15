@@ -4,18 +4,21 @@
 \setbeamercovered{transparent}
 \begin{columns}
 \column{0.30\linewidth}
-\visible<1-3>{
-\begin{itemize}
+\only<1-3>{\begin{itemize}
     \uncover<+->{\item Clasificaci\'on}
     \uncover<+->{\item Criterios}
-\end{itemize}
-}
+\end{itemize}}
 \column{0.7\linewidth}
-\invisible<1-2>{\begin{figure}[H]
+\only<3>{\begin{figure}[H]
 \centering
 \includegraphics[width=1.1\linewidth]{./graphics/esquema-herramientas.png}
 \caption{Esquema de la clasificaci\'on de tecnolog{\'\i}as y herramientas}
 \label{figure:esquema-herramientas}
 \end{figure}}
 \end{columns}
+
+\only<4>{\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{./graphics/esquema-herramientas-2.png}
+    \caption{Esquema de la clasificaci\'on de tecnolog{\'\i}as y herramientas}
+\end{figure}}
 \end{frame}
